@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Invite Sent";
+}
+
+<h2>Invite Sent Successfully!</h2>
+
+<p>Mail has been sent</p>
+<p>Link for testing purposes</p>
+
+@if (TempData["InviteLink"] != null)
+{
+    <p>
+        <a href="@TempData["InviteLink"]">@TempData["InviteLink"]</a>
+    </p>
+}
+else
+{
+    <p>No invite link available.</p>
+}

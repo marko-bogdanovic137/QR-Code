@@ -1,0 +1,25 @@
+﻿@model PraksaApp.Models.InviteViewModel
+@{
+    ViewData["Title"] = "Send Invite";
+}
+
+<h2>Send Invite</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="email">User Email</label>
+        <input type="email" class="form-control" asp-for="Email" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <button type="submit" class="btn btn-primary mt-2">Send Invite</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
